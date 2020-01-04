@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */; };
+		187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */; };
 		1881129823C082A700E175CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129723C082A700E175CB /* AppDelegate.swift */; };
 		1881129A23C082A700E175CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129923C082A700E175CB /* SceneDelegate.swift */; };
 		1881129C23C082A700E175CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129B23C082A700E175CB /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController3States.swift; sourceTree = "<group>"; };
 		1881129423C082A700E175CB /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1881129723C082A700E175CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1881129923C082A700E175CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				1881129723C082A700E175CB /* AppDelegate.swift */,
 				1881129923C082A700E175CB /* SceneDelegate.swift */,
+				187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */,
+				187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */,
 				1881129B23C082A700E175CB /* ViewController.swift */,
 				1881129D23C082A700E175CB /* Main.storyboard */,
 				188112A023C082A800E175CB /* Assets.xcassets */,
@@ -261,7 +267,9 @@
 			files = (
 				1881129C23C082A700E175CB /* ViewController.swift in Sources */,
 				1881129823C082A700E175CB /* AppDelegate.swift in Sources */,
+				187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */,
 				1881129A23C082A700E175CB /* SceneDelegate.swift in Sources */,
+				187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

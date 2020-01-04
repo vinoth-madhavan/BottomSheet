@@ -8,12 +8,39 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, BottomView {
+    
+    func addUIVisualEffectsView(visualEffectView: UIVisualEffectView) {
+        self.view.addSubview(visualEffectView)
+    }
+    
+    
+    
+    lazy var bottomSheetViewController: BottomSheetViewController3States = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(identifier: "BottomSheetViewController3States") as! BottomSheetViewController3States
+        return viewController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        bottomSheetViewController.delegate = self
+
+        self.addChild(bottomSheetViewController)
+        self.view.addSubview(bottomSheetViewController.view)
+        bottomSheetViewController.view.frame = CGRect(x: 0,
+                                                      y: UIScreen.main.bounds.height - 100 ,
+                                                      width: UIScreen.main.bounds.width,
+                                                      height: UIScreen.main.bounds.height + 100 )
+        
+        
+        
+        bottomSheetViewController.view.clipsToBounds = false
+        
+        
     }
+    
 
 
 }
