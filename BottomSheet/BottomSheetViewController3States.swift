@@ -66,7 +66,7 @@ class BottomSheetViewController3States: UIViewController {
             case .up:
                 nextState = .halfscreen
             case .down:
-                nextState = .collapsed
+                nextState = nil
                 
             }
         case .halfscreen:
@@ -80,7 +80,7 @@ class BottomSheetViewController3States: UIViewController {
         case .fullscreen:
             switch panDirection {
             case .up:
-                nextState = .fullscreen
+                nextState = nil
             case .down:
                 nextState = .halfscreen
             }
@@ -99,7 +99,7 @@ class BottomSheetViewController3States: UIViewController {
         switch recognizer.state {
             
         case .began:
-            startInteractiveTransition(state: nextState!, duration: 0.9)
+            startInteractiveTransition(state: nextState, duration: 0.9)
         case .changed:
             
             var fractionComplete = translation.y / cardHeight
@@ -115,9 +115,10 @@ class BottomSheetViewController3States: UIViewController {
         
     }
     
-    func startInteractiveTransition(state: State, duration:TimeInterval) {
+    func startInteractiveTransition(state: State?, duration:TimeInterval) {
+        
         if runningAnimations .isEmpty {
-            animateTransitionsIfNeeded(state: nextState!, duration: duration)
+            animateTransitionsIfNeeded(state: nextState, duration: duration)
         }
         for animator in runningAnimations {
             animator.pauseAnimation()
@@ -135,7 +136,11 @@ class BottomSheetViewController3States: UIViewController {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
-    func animateTransitionsIfNeeded(state: State, duration: TimeInterval) {
+    func animateTransitionsIfNeeded(state: State?, duration: TimeInterval) {
+        
+        guard let state = state else {
+                   return
+               }
         if runningAnimations .isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 
