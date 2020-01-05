@@ -47,7 +47,7 @@ class BottomSheetViewController3States: UIViewController {
         currentState = .collapsed
         let panGestureRecognizer =  UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
         self.view.addGestureRecognizer(panGestureRecognizer)
-        self.delegate?.addUIVisualEffectsView(visualEffectView: visualEffectView)
+        self.delegate!.addUIVisualEffectsView(visualEffectView: visualEffectView)
     }
     fileprivate func setupBottomSheetView() {
         // Gripper
@@ -138,9 +138,9 @@ class BottomSheetViewController3States: UIViewController {
     }
     func animateTransitionsIfNeeded(state: State?, duration: TimeInterval) {
         
-        guard let state = state else {
-                   return
-               }
+//        guard let state = state else {
+//                   return
+//               }
         if runningAnimations .isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 
@@ -175,18 +175,18 @@ class BottomSheetViewController3States: UIViewController {
                 switch state {
                 case .fullscreen, .halfscreen:
                     self.visualEffectView.effect = UIBlurEffect(style: .dark)
+                    
                 case .collapsed:
                     self.visualEffectView.effect = nil
                 default:
                     break
-                    
                 }
             }
             blurAnimator.startAnimation()
             runningAnimations.append(blurAnimator)
             
             let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                 switch state {
+                 switch state! {
                  case .fullscreen:
                         self.view.layer.cornerRadius = 12
                  case .halfscreen:
@@ -197,9 +197,7 @@ class BottomSheetViewController3States: UIViewController {
         }
             cornerRadiusAnimator.startAnimation()
             runningAnimations.append(cornerRadiusAnimator)
-        
     }
-    
     }
     
 }

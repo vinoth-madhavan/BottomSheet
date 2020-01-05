@@ -10,12 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, BottomView {
     
-    func addUIVisualEffectsView(visualEffectView: UIVisualEffectView) {
-        self.view.addSubview(visualEffectView)
-    }
-    
-    
-    
     lazy var bottomSheetViewController: BottomSheetViewController3States = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(identifier: "BottomSheetViewController3States") as! BottomSheetViewController3States
@@ -33,15 +27,14 @@ class ViewController: UIViewController, BottomView {
                                                       y: UIScreen.main.bounds.height - 100 ,
                                                       width: UIScreen.main.bounds.width,
                                                       height: UIScreen.main.bounds.height + 100 )
-        
-        
-        
         bottomSheetViewController.view.clipsToBounds = false
-        
-        
     }
     
-
+    func addUIVisualEffectsView(visualEffectView: UIVisualEffectView) {
+        visualEffectView.frame = view.frame
+          self.view.addSubview(visualEffectView)
+      }
+      
 
 }
 
