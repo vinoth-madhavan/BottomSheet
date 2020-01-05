@@ -175,11 +175,11 @@ class BottomSheetViewController3States: UIViewController {
                 switch state {
                 case .fullscreen, .halfscreen:
                     self.visualEffectView.effect = UIBlurEffect(style: .dark)
+                    
                 case .collapsed:
                     self.visualEffectView.effect = nil
                 default:
                     break
-                    
                 }
             }
             blurAnimator.startAnimation()
@@ -197,9 +197,7 @@ class BottomSheetViewController3States: UIViewController {
         }
             cornerRadiusAnimator.startAnimation()
             runningAnimations.append(cornerRadiusAnimator)
-        
     }
-    
     }
     
 }
