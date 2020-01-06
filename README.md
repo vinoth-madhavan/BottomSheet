@@ -1,2 +1,2 @@
 # BottomSheet
-BottomSheet for iOS
+BottomSheet for iOS with 3 states
