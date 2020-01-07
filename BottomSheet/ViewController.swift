@@ -24,9 +24,9 @@ class ViewController: UIViewController, BottomView {
         self.addChild(bottomSheetViewController)
         self.view.addSubview(bottomSheetViewController.view)
         bottomSheetViewController.view.frame = CGRect(x: 0,
-                                                      y: UIScreen.main.bounds.height - 100 ,
+                                                      y: UIScreen.main.bounds.height - 150 ,
                                                       width: UIScreen.main.bounds.width,
-                                                      height: UIScreen.main.bounds.height + 100 )
+                                                      height: UIScreen.main.bounds.height + 150 )
         bottomSheetViewController.view.clipsToBounds = false
     }
     
