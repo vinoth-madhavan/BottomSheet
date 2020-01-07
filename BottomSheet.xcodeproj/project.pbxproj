@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */; };
 		187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */; };
+		187F4D3223C3EC82003F18F1 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */; };
 		1881129823C082A700E175CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129723C082A700E175CB /* AppDelegate.swift */; };
 		1881129A23C082A700E175CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129923C082A700E175CB /* SceneDelegate.swift */; };
 		1881129C23C082A700E175CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881129B23C082A700E175CB /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController3States.swift; sourceTree = "<group>"; };
+		187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		1881129423C082A700E175CB /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1881129723C082A700E175CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1881129923C082A700E175CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187F4D3023C3EC3E003F18F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1881128B23C082A700E175CB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		1881129623C082A700E175CB /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				187F4D3023C3EC3E003F18F1 /* Views */,
 				1881129723C082A700E175CB /* AppDelegate.swift */,
 				1881129923C082A700E175CB /* SceneDelegate.swift */,
 				187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */,
@@ -268,6 +279,7 @@
 				1881129C23C082A700E175CB /* ViewController.swift in Sources */,
 				1881129823C082A700E175CB /* AppDelegate.swift in Sources */,
 				187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */,
+				187F4D3223C3EC82003F18F1 /* DesignableUITextField.swift in Sources */,
 				1881129A23C082A700E175CB /* SceneDelegate.swift in Sources */,
 				187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */,
 			);
