@@ -8,7 +8,12 @@
 
 import UIKit
 
-class BottomSheetViewController3States: UIViewController {
+class BottomSheetViewController3States: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    @IBOutlet weak var destinationTable: UITableView!
+
     
     enum State {
         
@@ -48,7 +53,13 @@ class BottomSheetViewController3States: UIViewController {
         let panGestureRecognizer =  UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
         self.view.addGestureRecognizer(panGestureRecognizer)
         self.delegate!.addUIVisualEffectsView(visualEffectView: visualEffectView)
+        
+        destinationTable.dataSource = self
+        destinationTable.delegate = self
+        
+        destinationTable.register(UINib(nibName: "DestinationCell", bundle: nil), forCellReuseIdentifier: "DestinationCell")
     }
+    
     fileprivate func setupBottomSheetView() {
         // Gripper
         self.gripperView.layer.cornerRadius = 3
@@ -137,6 +148,7 @@ class BottomSheetViewController3States: UIViewController {
         }
     }
     func animateTransitionsIfNeeded(state: State?, duration: TimeInterval) {
+        //TODO: Nil check:
         
 //        guard let state = state else {
 //                   return
@@ -200,4 +212,19 @@ class BottomSheetViewController3States: UIViewController {
     }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationCell") as! DestinationCell
+        cell.locationImage.image =  UIImage(named: "location")
+        cell.title.text = "Marina Bay Sands"
+        cell.subtitle.text  = "10 Bayfront Ave, Singapore 018956"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
