@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1830BC9523C6F2700051003E /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830BC9323C6F26F0051003E /* DestinationCell.swift */; };
+		1830BC9623C6F2700051003E /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1830BC9423C6F2700051003E /* DestinationCell.xib */; };
 		187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */; };
 		187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */; };
 		187F4D3223C3EC82003F18F1 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1830BC9323C6F26F0051003E /* DestinationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
+		1830BC9423C6F2700051003E /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 		187F4D2C23C113BB003F18F1 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		187F4D2D23C113BB003F18F1 /* BottomSheetViewController3States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController3States.swift; sourceTree = "<group>"; };
 		187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		187F4D3023C3EC3E003F18F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1830BC9323C6F26F0051003E /* DestinationCell.swift */,
+				1830BC9423C6F2700051003E /* DestinationCell.xib */,
 				187F4D3123C3EC82003F18F1 /* DesignableUITextField.swift */,
 			);
 			path = Views;
@@ -251,6 +257,7 @@
 			files = (
 				188112A423C082A800E175CB /* LaunchScreen.storyboard in Resources */,
 				188112A123C082A800E175CB /* Assets.xcassets in Resources */,
+				1830BC9623C6F2700051003E /* DestinationCell.xib in Resources */,
 				1881129F23C082A700E175CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +286,7 @@
 				1881129C23C082A700E175CB /* ViewController.swift in Sources */,
 				1881129823C082A700E175CB /* AppDelegate.swift in Sources */,
 				187F4D2F23C113BB003F18F1 /* BottomSheetViewController3States.swift in Sources */,
+				1830BC9523C6F2700051003E /* DestinationCell.swift in Sources */,
 				187F4D3223C3EC82003F18F1 /* DesignableUITextField.swift in Sources */,
 				1881129A23C082A700E175CB /* SceneDelegate.swift in Sources */,
 				187F4D2E23C113BB003F18F1 /* BottomSheetViewController.swift in Sources */,
