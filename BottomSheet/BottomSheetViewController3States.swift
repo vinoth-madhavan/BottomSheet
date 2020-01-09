@@ -8,10 +8,12 @@
 
 import UIKit
 
-class BottomSheetViewController3States: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BottomSheetViewController3States: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var destinationTable: UITableView!
     @IBOutlet var gripperView: UIView!
+    @IBOutlet weak var destinationText: DesignableUITextField!
+    @IBOutlet weak var destinationTable: UITableView!
+    
 
     enum State {
         case collapsed
@@ -61,8 +63,10 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
         
         destinationTable.dataSource = self
         destinationTable.delegate = self
-        
         destinationTable.register(UINib(nibName: "DestinationCell", bundle: nil), forCellReuseIdentifier: "DestinationCell")
+        
+        destinationText.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification , object:nil)
     }
     
     fileprivate func setupBottomSheetView() {
@@ -165,6 +169,7 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
                     self.view.frame.origin.y = self.halfScreenHeight
                     self.currentState = .halfscreen
                     self.destinationTable.isScrollEnabled = false
+                    self.destinationText.resignFirstResponder()
                     
                 case .fullscreen:
                     self.view.frame.origin.y = self.fullscreenHeight
@@ -176,6 +181,7 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
                     self.view.frame.origin.y = self.collapsedHeight
                     self.currentState = .collapsed
                     self.destinationTable.isScrollEnabled = false
+                    self.destinationText.resignFirstResponder()
                     
                 default:
                     break
@@ -232,4 +238,18 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
 
         return cell
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if (currentState == State.collapsed) || (currentState == State.halfscreen) {
+            nextState = .fullscreen
+            startInteractiveTransition(state: nextState, duration: 0.9)
+            continueInteractionTransition()
+        }
+       
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField .resignFirstResponder()
+        return true;
+    }
+
 }
