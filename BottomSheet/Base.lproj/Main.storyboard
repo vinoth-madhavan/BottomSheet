@@ -70,21 +70,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3b7-Lt-Fw1">
+                                <rect key="frame" x="0.0" y="186.5" width="414" height="675.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="a9m-xy-FbE" customClass="DestinationCell" customModule="BottomSheet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a9m-xy-FbE" id="d5n-W2-hV6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Iea-Fz-hvD" firstAttribute="top" secondItem="Jpw-fA-lX3" secondAttribute="top" constant="10" id="1aI-Zx-gHf"/>
+                            <constraint firstItem="Jpw-fA-lX3" firstAttribute="trailing" secondItem="3b7-Lt-Fw1" secondAttribute="trailing" id="70q-At-uBg"/>
                             <constraint firstItem="i2H-3k-p58" firstAttribute="leading" secondItem="Jpw-fA-lX3" secondAttribute="leading" constant="20" id="BhY-IV-yAp"/>
+                            <constraint firstItem="3b7-Lt-Fw1" firstAttribute="top" secondItem="mNn-s0-sAl" secondAttribute="bottom" constant="20" id="CVM-zg-OfY"/>
                             <constraint firstItem="Jpw-fA-lX3" firstAttribute="trailing" secondItem="mNn-s0-sAl" secondAttribute="trailing" constant="20" id="ZhO-L4-GNa"/>
                             <constraint firstItem="mNn-s0-sAl" firstAttribute="top" secondItem="i2H-3k-p58" secondAttribute="bottom" constant="20" id="cJb-g5-Rbb"/>
                             <constraint firstItem="i2H-3k-p58" firstAttribute="top" secondItem="Iea-Fz-hvD" secondAttribute="bottom" constant="15" id="iHS-o2-g02"/>
                             <constraint firstItem="Jpw-fA-lX3" firstAttribute="trailing" secondItem="i2H-3k-p58" secondAttribute="trailing" constant="20" id="imJ-B9-hDH"/>
                             <constraint firstItem="Iea-Fz-hvD" firstAttribute="centerX" secondItem="Jpw-fA-lX3" secondAttribute="centerX" id="lUd-Cd-LpG"/>
                             <constraint firstItem="mNn-s0-sAl" firstAttribute="leading" secondItem="Jpw-fA-lX3" secondAttribute="leading" constant="20" id="mcX-ux-ogt"/>
+                            <constraint firstItem="3b7-Lt-Fw1" firstAttribute="leading" secondItem="Jpw-fA-lX3" secondAttribute="leading" id="rw6-t8-Y5d"/>
+                            <constraint firstItem="Jpw-fA-lX3" firstAttribute="bottom" secondItem="3b7-Lt-Fw1" secondAttribute="bottom" id="zZk-Fe-b4i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jpw-fA-lX3"/>
                     </view>
                     <connections>
+                        <outlet property="destinationTable" destination="3b7-Lt-Fw1" id="5yf-8C-jrV"/>
                         <outlet property="gripperView" destination="Iea-Fz-hvD" id="31t-hh-Jcd"/>
                     </connections>
                 </viewController>
