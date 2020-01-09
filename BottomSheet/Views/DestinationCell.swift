@@ -18,6 +18,9 @@ class DestinationCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        locationImage.tintColor = UIColor.darkGray
+        title.textColor = UIColor.black
+        subtitle.textColor = UIColor.darkGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

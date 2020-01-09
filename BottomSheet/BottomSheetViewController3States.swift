@@ -10,13 +10,10 @@ import UIKit
 
 class BottomSheetViewController3States: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
     @IBOutlet weak var destinationTable: UITableView!
+    @IBOutlet var gripperView: UIView!
 
-    
     enum State {
-        
         case collapsed
         case halfscreen
         case fullscreen
@@ -34,14 +31,22 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
     
     
     let cardHeight: CGFloat = UIScreen.main.bounds.height - 150
-    
     let collapsedHeight = UIScreen.main.bounds.height - 150
     let halfScreenHeight = UIScreen.main.bounds.height / 2
     let fullscreenHeight:CGFloat = 150
     var animationPrgressWhenInterrupted:CGFloat = 0
-    
-    @IBOutlet var gripperView: UIView!
-    
+   
+    struct SampleData {
+        var address1: String
+        var address2: String
+    }
+    let sampleData = [
+        SampleData(address1: "Apple Park", address2: "One Apple Park Way, Cupertino, CA 95014, USA"),
+        SampleData(address1: "Tesla Headquarters", address2: "3500 Deer Creek Road, Palo Alto, CA 94304, USA"),
+        SampleData(address1: "Google", address2: "1600 Amphitheatre PkwyMountain View, CA 94043, USA"),
+        SampleData(address1: "Twitter", address2: "1355 Market Street Suite 900, San Francisco, USA"),
+        SampleData(address1: "Facebook", address2: "1 Hackerway, Menlo Park, CA 94025, USA"),
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,11 +153,9 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
         }
     }
     func animateTransitionsIfNeeded(state: State?, duration: TimeInterval) {
-        //TODO: Nil check:
-        
-//        guard let state = state else {
-//                   return
-//               }
+        guard let state = state else {
+            return
+        }
         if runningAnimations .isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 
@@ -161,15 +164,18 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
                 case .halfscreen:
                     self.view.frame.origin.y = self.halfScreenHeight
                     self.currentState = .halfscreen
+                    self.destinationTable.isScrollEnabled = false
                     
                 case .fullscreen:
                     self.view.frame.origin.y = self.fullscreenHeight
                     self.currentState = .fullscreen
+                    self.destinationTable.isScrollEnabled = true
                     
                     
                 case .collapsed:
                     self.view.frame.origin.y = self.collapsedHeight
                     self.currentState = .collapsed
+                    self.destinationTable.isScrollEnabled = false
                     
                 default:
                     break
@@ -198,7 +204,8 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
             runningAnimations.append(blurAnimator)
             
             let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                 switch state! {
+               
+                 switch state {
                  case .fullscreen:
                         self.view.layer.cornerRadius = 12
                  case .halfscreen:
@@ -213,18 +220,16 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationCell") as! DestinationCell
-        cell.locationImage.image =  UIImage(named: "location")
-        cell.title.text = "Marina Bay Sands"
-        cell.subtitle.text  = "10 Bayfront Ave, Singapore 018956"
+        
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationCell") as! DestinationCell
+            cell.locationImage.image =  UIImage(systemName: "location")
+            cell.title.text = sampleData[indexPath.row % 5].address1
+            cell.subtitle.text  = sampleData[indexPath.row % 5].address2
+
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }
