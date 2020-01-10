@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Ubuntu-regular.ttf</string>
+		<string>Ubuntu-regular-italics.ttf</string>
+		<string>Ubuntu-medium.ttf</string>
+		<string>Ubuntu-medium-italics.ttf</string>
+		<string>Ubuntu-light.ttf</string>
+		<string>Ubuntu-light-italics.ttf</string>
+		<string>Ubuntu-condensed.ttf</string>
+		<string>Ubuntu-bold.ttf</string>
+		<string>Ubuntu-bold-ilalics.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
