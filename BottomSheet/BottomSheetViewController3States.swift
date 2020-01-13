@@ -13,8 +13,8 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
     @IBOutlet var gripperView: UIView!
     @IBOutlet weak var destinationText: DesignableUITextField!
     @IBOutlet weak var destinationTable: UITableView!
+    @IBOutlet weak var destinationTitleLabel: UILabel!
     
-
     enum State {
         case collapsed
         case halfscreen
@@ -50,13 +50,16 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
         SampleData(address1: "Facebook", address2: "1 Hackerway, Menlo Park, CA 94025, USA"),
     ]
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        visualEffectView = UIVisualEffectView()
         
-        
+        setupText()
         setupBottomSheetView()
         currentState = .collapsed
+        
+        visualEffectView = UIVisualEffectView()
+
         let panGestureRecognizer =  UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
         self.view.addGestureRecognizer(panGestureRecognizer)
         self.delegate!.addUIVisualEffectsView(visualEffectView: visualEffectView)
@@ -75,9 +78,13 @@ class BottomSheetViewController3States: UIViewController, UITableViewDataSource,
         self.view.layer.shadowRadius = 5
         self.view.layer.shadowColor = UIColor.gray.cgColor
         self.view.layer.shadowOpacity = 0.9
-        
     }
     
+    fileprivate func setupText() {
+          destinationTitleLabel.text = NSLocalizedString("Where would you like to go?", comment: "Where would you like to go?")
+          destinationText.placeholder = NSLocalizedString("Search for destination", comment: "Search for destination")
+      }
+      
     fileprivate func setNextState(panDirection panDirection: BottomSheetViewController3States.PanDirection) {
         
         switch currentState  {
