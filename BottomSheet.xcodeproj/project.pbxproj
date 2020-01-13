@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801856423CBF4A000C41EBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1801856623CBF4A000C41EBB /* Localizable.strings */; };
 		1830BC9523C6F2700051003E /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830BC9323C6F26F0051003E /* DestinationCell.swift */; };
 		1830BC9623C6F2700051003E /* DestinationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1830BC9423C6F2700051003E /* DestinationCell.xib */; };
 		1830BCA223C7FB100051003E /* Ubuntu-bold-ilalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1830BCA023C7FAE20051003E /* Ubuntu-bold-ilalics.ttf */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1801856523CBF4A000C41EBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1830BC9323C6F26F0051003E /* DestinationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
 		1830BC9423C6F2700051003E /* DestinationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationCell.xib; sourceTree = "<group>"; };
 		1830BC9923C7FAE10051003E /* Ubuntu-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-condensed.ttf"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				188112A023C082A800E175CB /* Assets.xcassets */,
 				188112A223C082A800E175CB /* LaunchScreen.storyboard */,
 				188112A523C082A800E175CB /* Info.plist */,
+				1801856623CBF4A000C41EBB /* Localizable.strings */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				1830BCA323C7FB140051003E /* Ubuntu-bold.ttf in Resources */,
 				1830BCAA23C7FB190051003E /* Ubuntu-regular.ttf in Resources */,
 				188112A423C082A800E175CB /* LaunchScreen.storyboard in Resources */,
+				1801856423CBF4A000C41EBB /* Localizable.strings in Resources */,
 				1830BCA523C7FB190051003E /* Ubuntu-light-italics.ttf in Resources */,
 				1830BCA423C7FB190051003E /* Ubuntu-condensed.ttf in Resources */,
 				188112A123C082A800E175CB /* Assets.xcassets in Resources */,
@@ -369,6 +373,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1801856623CBF4A000C41EBB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1801856523CBF4A000C41EBB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		1881129D23C082A700E175CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
